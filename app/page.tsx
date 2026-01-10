@@ -18,9 +18,9 @@ export default async function Home() {
     <>
     <section className={styles.top}>
       <div>
-        <h1 className={styles.title}>テクノロジーの力で世界をかえる</h1>
+        <h1 className={styles.title}>Welcome</h1>
         <p className={styles.description}>
-        私たちは市場をリードしているグローバルスティックカンパニーです。
+          ここは志村 飛翔のプローフィールサイトです。
       </p>
     </div>
     <Image
