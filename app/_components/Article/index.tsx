@@ -19,7 +19,7 @@ export default function Article({data}:Props) {
             </div>
             {data.thumbnail && (
                 <Image
-                    src={data.thumbnail}
+                    src={data.thumbnail.url}
                     alt=""
                     className={styles.thumbnail}
                     width={data.thumbnail.width}

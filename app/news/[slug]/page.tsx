@@ -1,12 +1,13 @@
 import { getNewsDetail } from "@/app/_libs/microcms";
-type Props = {
-    Params: {
-        slug: string;
-    }
-};
+import Article from "@/app/_components/Article";
+import { notFound } from "next/navigation";
 
-export default async function Page({Params}:Props) {
-    const data =await getNewsDetail(params.slug);
+export default async function Page({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const data = await getNewsDetail(params.slug).catch(() => notFound());
 
-    return <div>{data.title}</div>
+  return <Article data={data} />;
 }
