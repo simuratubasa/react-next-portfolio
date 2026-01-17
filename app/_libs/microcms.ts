@@ -27,19 +27,23 @@ if (!process.env.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN) {
     throw new Error("MICROCMS_SERVICE_DOMAIN is required");
 }
 
+const serviceDomain = process.env.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN
+    .replace(/^https?:\/\//, "")
+    .replace(/\.microcms\.io\/?$/, "");
+
 if (!process.env.MICROCMS_API_KEY) {
     throw new Error("MICROCMS_API_KEY is required");
 }
 
 const client = createClient({
-    serviceDomain: process.env.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN,
+    serviceDomain,
     apiKey: process.env.MICROCMS_API_KEY,
 });
 
 export const getMembers = async (queries?: MicroCMSQueries) => {
     const listData = await client
         .getList<Member>({
-            endpoint: "members",
+            endpoint: "member",
             queries,
         });
     return listData;
@@ -65,5 +69,18 @@ export const getNewsDetail = async (
     });
     return data;
 }
+
+export const getMemberDetail = async (
+    contentId: string,
+    queries?: MicroCMSQueries
+) => {
+    const data = await client.getListDetail<Member>({
+        endpoint: "member",
+        contentId,
+        queries,
+    });
+    return data;
+}
+
 // 既存コードで `getMemberList` を参照している箇所があるため互換のためのエイリアスを追加
 export const getMemberList = getMembers;

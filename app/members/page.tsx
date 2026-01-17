@@ -1,34 +1,18 @@
-import Image from "next/image";
 import { getMemberList} from "@/app/_libs/microcms";
 import { MEMBER_LIST_LIMIT} from "@/app/_constants";
-import styles from "./page.module.css";
+import { notFound } from "next/navigation";
+import MemberList from "@/app/_components/MemberList";
 
 export default async function Page() {
-    const data = await getMemberList({ limit: MEMBER_LIST_LIMIT });
-    return(
-        <div className={styles.container}>
-            {data.contents.length === 0 ? (
-                <p className={styles.container}></p>
-            ):(
-                <ul>
-                    {data.contents.map((member) => (
-                        <li key={member.id} className={styles.list}>
-                            <Image
-                                src={member.image.url}
-                                alt={member.name}
-                                width={member.image.width}
-                                height={member.image.height}
-                                className={styles.image}
-                            />
-                            <dl>
-                                <dt className={styles.name}>{member.name}</dt>
-                                <dd className={styles.position}>{member.position}</dd>
-                                <dd className={styles.profile}>{member.profile}</dd>
-                            </dl>
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </div>
+    const data = await getMemberList({ limit: MEMBER_LIST_LIMIT }).catch(() => {
+        notFound();
+    });
+
+    if (!data) {
+        notFound();
+    }
+
+    return (
+        <MemberList members={data.contents} />
     );
 }

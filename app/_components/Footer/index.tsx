@@ -10,14 +10,14 @@ export default function Footer(): JSX.Element {
             <Link href="/news">ニュース</Link>
           </li>
           <li className={styles.item}>
-            <Link href="/members">メンバー</Link>
+            <Link href="/members">自己紹介</Link>
           </li>
           <li className={styles.item}>
             <Link href="/contact">お問い合わせ</Link>
           </li>
         </ul>
       </nav>
-      <p className={styles.cr}>©️ SIMPLE. All Rights Reserved 2024 </p>
+      <p className={styles.cr}>©️ simura tubasa portfolio 2026 </p>
     </footer>
   );
 } 

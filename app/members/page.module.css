@@ -10,7 +10,15 @@
     margin-bottom: 80px;
 }
 
-.list:nth-child(even) {
+.link {
+    display: flex;
+    gap: 40px;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+}
+
+.list:nth-child(even) .link {
     flex-direction: row-reverse;
 }
 
