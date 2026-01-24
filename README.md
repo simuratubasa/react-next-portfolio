@@ -1,8 +1,8 @@
-# Read me
+# README
 
 # react-next-portfolio
 
-サイトURL: https://example.com
+サイトURL: https://react-next-portfolio-umber-ten.vercel.app/
 
 シンプルなポートフォリオサイトのサンプルです。
 
