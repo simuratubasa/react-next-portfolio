@@ -16,7 +16,7 @@ export default function MemberList({ members, truncateProfile = true }: Props) {
         <ul>
             {members.map((member) => (
                 <li key={member.id} className={styles.list}>
-                    <Link href={`/members/${member.id}`} className={styles.link}>
+                    <Link href={`/member/${member.id}`} className={styles.link}>
                         {member.image ? (
                             <Image
                                 src={member.image.url}

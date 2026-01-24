@@ -26,7 +26,7 @@ export default async function Page({
         <dd className={styles.profile}>{data.profile || ""}</dd>
       </dl>
       <div className={styles.footer}>
-        <ButtonLink href="/members">一覧に戻る</ButtonLink>
+        <ButtonLink href="/member">一覧に戻る</ButtonLink>
       </div>
     </>
   );

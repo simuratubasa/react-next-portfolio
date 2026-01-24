@@ -29,7 +29,7 @@ export default async function Home() {
       <div>
         <h1 className={styles.title}>Welcome</h1>
         <p className={styles.description}>
-          <Link href="/members" className={styles.descriptionLink}>
+          <Link href="/member" className={styles.descriptionLink}>
             私のプロフィールサイトへようこそ
           </Link>
       </p>

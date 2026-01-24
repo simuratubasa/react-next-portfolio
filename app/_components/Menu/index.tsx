@@ -17,9 +17,9 @@ export default function Menu(){
                     <li>
                         <Link href="/news">ニュース</Link>
                     </li>
-                    <li>
-                       <Link href="/members">自己紹介</Link>
-                    </li>
+                          <li>
+                              <Link href="/member">自己紹介</Link>
+                          </li>
                     <li>
                        <Link href="/contact">お問い合わせ</Link>
                     </li>
