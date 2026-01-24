@@ -15,7 +15,7 @@ export default function Hero({ title, sub }: Props){
             </div>
             <Image
                 className={styles.bgimg}
-                src="/img-mv.jpg"
+                src="/3643882.jpg"
                 alt=""
                 width={4000}
                 height={1200}

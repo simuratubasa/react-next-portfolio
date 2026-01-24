@@ -30,13 +30,13 @@ export default async function Home() {
         <h1 className={styles.title}>Welcome</h1>
         <p className={styles.description}>
           <Link href="/members" className={styles.descriptionLink}>
-            ここは志村 飛翔のプローフィールサイトです。
+            私のプロフィールサイトへようこそ
           </Link>
       </p>
     </div>
     <Image
       className={styles.bgimg}
-      src="/img-mv.jpg"
+      src="/3643882.jpg"
       alt=""
       width={4000}
       height={1200}
@@ -44,11 +44,8 @@ export default async function Home() {
   </section>
 
   <section className={styles.members}>
-    <h2 className={styles.sectionTitle}>Members</h2>
+    <h2 className={styles.sectionTitle}>About Me</h2>
     <MemberList members={membersData.contents} />
-    <div className={styles.sectionLink}>
-      <ButtonLink href="/members">もっと見る</ButtonLink>
-    </div>
   </section>
 
   <section className={styles.news}>

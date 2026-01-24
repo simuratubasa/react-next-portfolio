@@ -8,7 +8,7 @@ export default function Header(): JSX.Element {
     <header className={styles.header}>
       <Link href="/" className={styles.logoLink}>
         <Image
-          src="/logo.svg"
+          src="/home.png"
           alt="SIMPLE"
           width={348}
           height={133}
