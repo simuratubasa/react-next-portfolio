@@ -13,6 +13,6 @@ export default async function Page() {
     }
 
     return (
-        <MemberList members={data.contents} />
+        <MemberList members={data.contents} truncateProfile={false} />
     );
 }

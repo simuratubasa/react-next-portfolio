@@ -5,9 +5,10 @@ import { Member } from "@/app/_libs/microcms";
 
 type Props = {
     members: Member[];
+    truncateProfile?: boolean;
 };
 
-export default function MemberList({ members }: Props) {
+export default function MemberList({ members, truncateProfile = true }: Props) {
     if (members.length === 0) {
         return <p className={styles.empty}>メンバーがいません。</p>;
     }
@@ -37,7 +38,7 @@ export default function MemberList({ members }: Props) {
                             <dt className={styles.name}>{member.name}</dt>
                             <dd className={styles.position}>{member.position}</dd>
                             <dd className={styles.profile}>
-                                {member.profile && member.profile.length > 100
+                                {truncateProfile && member.profile && member.profile.length > 100
                                     ? member.profile.substring(0, 100) + "..."
                                     : member.profile || ""}
                             </dd>
