@@ -15,7 +15,7 @@ export default function Article({data}:Props) {
             <p className={styles.description}>{data.description}</p>
             <div className={styles.meta}>
                 <Category category={data.category} />
-                <Date deta={data.publishedAt ?? data.createdAt} />
+                <Date date={data.publishedAt ?? data.createdAt} />
             </div>
             {data.thumbnail && (
                 <Image
