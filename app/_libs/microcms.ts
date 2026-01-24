@@ -25,7 +25,7 @@ export type News = {
 } & MicroCMSListContent;
 
 const getServiceDomain = () => {
-  const domain = process.env.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN;
+  const domain = process.env.MICROCMS_SERVICE_DOMAIN;
   if (!domain) {
     throw new Error("MICROCMS_SERVICE_DOMAIN is required");
   }
