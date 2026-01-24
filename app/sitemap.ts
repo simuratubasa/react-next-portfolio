@@ -10,7 +10,7 @@ const buildUrl = (path?: string) => `${siteUrl}${path ?? ''}`;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const hasMicrocmsEnv = Boolean(
-    process.env.NEXT_PUBLIC_MICROCMS_SERVICE_DOMAIN &&
+    process.env.MICROCMS_SERVICE_DOMAIN &&
       process.env.MICROCMS_API_KEY
   );
 
@@ -48,7 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
     },
     {
-      url: buildUrl('/members'),
+      url: buildUrl('/member'),
       lastModified: now,
     },
     {

@@ -21,7 +21,7 @@ export type News = {
   description: string;
   content: string;
   thumbnail?: MicroCMSImage;
-  category: Category;
+  category?: Category;
 } & MicroCMSListContent;
 
 const getServiceDomain = () => {
@@ -124,7 +124,7 @@ export const getMemberDetail = async (
 ) => {
   const client = getClient();
   const data = await client.getListDetail<Member>({
-    endpoint: "member",
+  endpoint: "member",
         contentId,
         queries,
     });

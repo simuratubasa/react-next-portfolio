@@ -1,18 +1,20 @@
-import { getMemberList} from "@/app/_libs/microcms";
-import { MEMBER_LIST_LIMIT} from "@/app/_constants";
-import { notFound } from "next/navigation";
-import MemberList from "@/app/_components/MemberList";
+import Image from "next/image";
+import styles from "./page.module.css";
 
-export default async function Page() {
-    const data = await getMemberList({ limit: MEMBER_LIST_LIMIT }).catch(() => {
-        notFound();
-    });
-
-    if (!data) {
-        notFound();
-    }
-
+export default function Page() {
     return (
-        <MemberList members={data.contents} truncateProfile={false} />
+        <section>
+            <Image
+                src="/メディア.jpg"
+                alt=""
+                width={1600}
+                height={900}
+                className={styles.mediaImage}
+                priority
+            />
+            <h2 className={styles.title}>志村飛翔</h2>
+            <p className={styles.subtitle}>京都デザイン＆テクノロジー専門学校/スーパーITエンジニア専攻</p>
+            <p className={styles.profileText}>趣味はゲームで最近は７DAYSやRaftなどを遊んでいます</p>
+        </section>
     );
 }

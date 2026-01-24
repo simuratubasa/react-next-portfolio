@@ -1,10 +1,9 @@
 import  styles from "./page.module.css"; 
 import Image from "next/image";
 import Link from "next/link";
-import { TOP_NEWS_LIMIT, MEMBER_LIST_LIMIT } from "./_constants";
+import { TOP_NEWS_LIMIT } from "./_constants";
 import NewsList from "@/app/_components/NewsList";
-import MemberList from "@/app/_components/MemberList";
-import { getNews, getMemberList } from "@/app/_libs/microcms";
+import { getNews } from "@/app/_libs/microcms";
 import ButtonLink from "@/app/_components/ButtonLink";
 
 
@@ -17,12 +16,6 @@ export default async function Home() {
     contents: [],
   }));
   
-  const membersData = await getMemberList({
-    limit: 2, // ホーム画面には数名表示
-  }).catch(() => ({
-    contents: [],
-  }));
-
   return (
     <>
     <section className={styles.top}>
@@ -45,7 +38,10 @@ export default async function Home() {
 
   <section className={styles.members}>
     <h2 className={styles.sectionTitle}>About Me</h2>
-    <MemberList members={membersData.contents} />
+    <p>自己紹介ページはこちらからご覧ください。</p>
+    <div className={styles.sectionLink}>
+      <ButtonLink href="/member">自己紹介を見る</ButtonLink>
+    </div>
   </section>
 
   <section className={styles.news}>
